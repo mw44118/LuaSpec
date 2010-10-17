@@ -15,23 +15,33 @@ function before(callable)
 end
 
 
-describe('Number', function()
-    it('is addable', function()
-        assert(1 + 1 == 2)
-    end)
 
-    it('knows equality for big numbers', function()
-        assert(100^100 == 10^200)
-    end)
+describe('Number',
 
-    it('sadly is implemented as a double float', function()
-        assert(tostring(50^50) == "8.8817841970013e+84")
-    end)
+    function()
 
-    it('sadly is addable to strings', function()
-        assert(1 + '1' == 2)
-    end)
-end)
+        it('is addable',
+            function()
+                assert(1 + 1 == 2)
+            end)
+
+        it('knows equality for big numbers',
+            function()
+                assert(100^100 == 10^200)
+            end)
+
+        it('sadly is implemented as a double float',
+            function()
+                assert(tostring(50^50) == "8.8817841970013e+84")
+            end)
+
+        it('sadly is addable to strings',
+            function()
+                assert(1 + '1' == 2)
+            end)
+
+    end -- closes the function passed in as parameter two to describe.
+)
 
 
 describe('Function', function()
